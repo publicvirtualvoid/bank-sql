@@ -1,0 +1,11 @@
+{
+  "name": "bank-sql",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "dev": "concurrently \"tsc -w\" \"nodemon --inspect-brk ./dist/main.js\""
+  },
+  "author": "",
+  "license": "ISC"
+}
