@@ -2,10 +2,12 @@ import * as fs from 'fs-extra';
 import * as path from 'path';
 import * as xml from 'xml2js';
 import { OFX } from './interfaces';
+import * as typeorm from "typeorm";
 
 const INDIR = 'input';
 
 (async function main() {
+  const db = await typeorm.createConnection();
   const files = await fs.readdir(INDIR);
   const ofxFiles = files.filter(f => f.endsWith('.ofx'));
   
@@ -16,10 +18,10 @@ const INDIR = 'input';
       explicitArray: false,
     });
 
-    const statementResponse = ofxData.OFX.CREDITCARDMSGSRSV1.STMTTRNRS.STMTRS;
-    const accountId = statementResponse.BANKACCTFROM.ACCTID;
-    const currencyCode = statementResponse.CURDEF;
-    const transactionStatement = statementResponse.BANKTRANLIST.STMTTRN;
+    // const statementResponse = ofxData.OFX.CREDITCARDMSGSRSV1.STMTTRNRS.STMTRS;
+    // const accountId = statementResponse.BANKACCTFROM.ACCTID;
+    // const currencyCode = statementResponse.CURDEF;
+    // const transactionStatement = statementResponse.BANKTRANLIST.STMTTRN;
     // do something...  
   }
 
