@@ -5,5 +5,5 @@
   "username": "test",
   "password": "test",
   "database": "test",
-  "entities": [ "./dist/db/**/*.js" ]
+  "entities": [ "./dist/be/src/db/**/*.js" ]
 }

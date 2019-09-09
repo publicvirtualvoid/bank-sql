@@ -4,7 +4,7 @@
   "description": "",
   "main": "dist/index.js",
   "scripts": {
-    "dev": "concurrently \"tsc -w\" \"nodemon --inspect-brk ./dist/main.js\"",
+    "dev": "concurrently \"tsc -w\" \"nodemon --inspect-brk ./dist/be/src/main.js\"",
     "db": "docker run --restart unless-stopped --name bank-sql -e POSTGRES_PASSWORD=test -e POSTGRES_USER=test -e POSTGRES_DB=test -p 5432:5432 -d postgres"
   },
   "author": "",
